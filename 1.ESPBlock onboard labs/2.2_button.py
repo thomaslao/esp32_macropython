@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# －－－－湖南创乐博智能科技有限公司－－－－
-#  文件名：2.2_button.py
-#  版本：V2.0
-#  author: zhulin
-# 说明：板载方向按键实验
-#---------------------------------------
 from machine import Pin
 from time import sleep
 
