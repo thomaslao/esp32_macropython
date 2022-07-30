@@ -2,13 +2,19 @@ from machine import Pin
 from time import sleep
 
 # 定义LED管脚
-led=[0,16,17,18,19,23,5,1,3]
-leds = [Pin(led[i],Pin.OUT) for i in range(1,9)]
+led1_pin=16
+led2_pin=17
+led3_pin=18
+led4_pin=19
+led1 = Pin(led1_pin,Pin.OUT)
+led2 = Pin(led2_pin,Pin.OUT)
+led3 = Pin(led3_pin,Pin.OUT)
+led4 = Pin(led4_pin,Pin.OUT)
  
 uppin=22
 leftpin=32
 downpin=25
-rightpin=4
+rightpin=26
 
 up_button=Pin(uppin,Pin.IN,Pin.PULL_UP)
 left_button=Pin(leftpin,Pin.IN,Pin.PULL_UP)
@@ -27,36 +33,37 @@ while True:
     if up_tmp!=up_status:
         if up_tmp==0:
             print(state[0])
-            leds[1].value(1)
-            sleep(0.05)
-            led[1].value(0)
+            led1.value(1)
+            sleep(0.1)
+            led1.value(0)
         up_status=up_tmp
     
     #left
     left_status=left_button.value()
     if left_status != 1:
         print(state[1])
-        leds[2].value(1)
-        sleep(0.05)
-        led[2].value(0)
+        led2.value(1)
+        sleep(0.1)
+        led2.value(0)
         
     #down
     down_tmp=down_button.value()
     if down_tmp!=down_status :
         print(state[2])
-        leds[3].value(1)
-        sleep(0.05)
-        led[3].value(0)
+        led3.value(1)
+        sleep(0.1)
+        led3.value(0)
         down_status=down_tmp
     
     #right
     right_tmp=right_button.value()
-    if right_tmp!=1:
-        print(state[3])
-        leds[4].value(1)
-        sleep(0.05)
-        led[4].value(0)
-        
-    sleep(0.2)
+    if right_tmp!=right_status:
+        if right_tmp==0:
+            print(state[3])
+            led4.value(1)
+            sleep(0.1)
+            led4.value(0)
+        right_status=up_tmp
+    sleep(0.1)
     
     

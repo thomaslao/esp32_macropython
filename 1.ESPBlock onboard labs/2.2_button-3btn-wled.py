@@ -28,8 +28,8 @@ while True:
         if up_tmp==0:
             print(state[0])
             leds[1].value(1)
-            sleep(0.05)
-            led[1].value(0)
+            sleep(0.1)
+            leds[1].value(0)
         up_status=up_tmp
     
     #left
@@ -37,16 +37,16 @@ while True:
     if left_status != 1:
         print(state[1])
         leds[2].value(1)
-        sleep(0.05)
-        led[2].value(0)
+        sleep(0.1)
+        leds[2].value(0)
         
     #down
     down_tmp=down_button.value()
     if down_tmp!=down_status :
         print(state[2])
         leds[3].value(1)
-        sleep(0.05)
-        led[3].value(0)
+        sleep(0.1)
+        leds[3].value(0)
         down_status=down_tmp
     
     #right
@@ -54,9 +54,9 @@ while True:
     if right_tmp!=1:
         print(state[3])
         leds[4].value(1)
-        sleep(0.05)
-        led[4].value(0)
+        sleep(0.1)
+        leds[4].value(0)
         
-    sleep(0.2)
+    sleep(0.5)
     
     
